@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--Author Dmitrij Bauer und Tim Wegner-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+    <title>Solar Space</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <script defer src="main.dart.js"></script>
+</head>
+
+<body>
+  <!--Die View, welche im Landscape-Mode freigeschaltet werden soll -->
+  <div id="landscape">Please, change to Portrait-Mode
+    <div  id="landscapeWarning"></div>
+  </div>
+  <!--Die View, welche im Portrait-Mode freigeschaltet werden soll -->
+  <div id="portrait">
+    <!--Das Startmenu mit den dazugehoerigen Buttons-->
+    <div id="start_menu">
+      <h1>Solar Space</h1>
+      <div id="menu_buttons">
+        <div id="startButton" class="button">Start</div>
+        <div id="continueButton" class="button">Continue</div>
+        <div id="highscoreButton" class="button">Highscores</div>
+        <div id="levellistButton" class="button">Level</div>
+        <input id = "check" type="checkbox" name="opt" value="debug_mode"> <!--Debugging-->
+      </div>
+      <!--Die Highscoreuebersicht mit der dazugehoerigen Tabelle fuer die Highscores-->
+      <div id="highscoreListContainer">
+        <table id="highscoreList">
+          <tr>
+            <td id = "highscoreLevel">Level</td>
+            <td></td>
+            <td id = "highscoreScore">Highscore</td>
+          </tr>
+          <tr>
+            <td id = "highscoreLevel1">Level 1:</td>
+            <td></td>
+            <td id = "highscoreScore1">0:00</td>
+          </tr>
+          <tr>
+            <td id = "highscoreLevel2">Level 2:</td>
+            <td></td>
+            <td id = "highscoreScore2">0:00</td>
+          </tr>
+          <tr>
+            <td id = "highscoreLevel3">Level 3:</td>
+            <td></td>
+            <td id = "highscoreScore3">0:00</td>
+          </tr>
+          <tr>
+            <td id = "highscoreLevel4">Level 4:</td>
+            <td></td>
+            <td id = "highscoreScore4">0:00</td>
+          </tr>
+          <tr>
+            <td id = "highscoreLevel5">Level 5:</td>
+            <td></td>
+            <td id = "highscoreScore5">0:00</td>
+          </tr>
+          <tr>
+            <td id = "highscoreLevel6">Level 6:</td>
+            <td></td>
+            <td id = "highscoreScore6">0:00</td>
+          </tr>
+          <tr>
+            <td id = "highscoreLevel7">Level 7:</td>
+            <td></td>
+            <td id = "highscoreScore7">0:00</td> 
+          </tr> 
+          <tr>
+            <td id = "highscoreLevel8">Level 8:</td>
+            <td></td>
+            <td id = "highscoreScore8">0:00</td>
+          </tr>
+          <tr>
+            <td id = "highscoreLevel9">Level 9:</td>
+            <td></td>
+            <td id = "highscoreScore9">0:00</td>
+          </tr>
+          <tr>
+            <td id = "highscoreLevel10">Level 10:</td>
+            <td></td>
+            <td id = "highscoreScore10">0:00</td>
+          </tr>
+        </table>
+        <div id ="highscoreAbbruch" class="button">Return</div>
+      </div>
+      <!--Die Levelliste mit der dazugehoerigen Tabelle der verschiedenen Level-->
+      <div id = "levellistContainer">
+        <table id="levellist">
+          <h2>Level</h2>
+          <tr>
+            <td id ="level1" class="button">1</td>
+            <td id ="level2" class="button">2</td>
+            <td id ="level3" class="button">3</td>
+          </tr>
+          <tr>
+            <td id ="level4" class="button">4</td>
+            <td id ="level5" class="button">5</td>
+            <td id ="level6" class="button">6</td>
+          </tr>
+          <tr>
+            <td id ="level7" class="button">7</td>
+            <td id ="level8" class="button">8</td>
+            <td id ="level9" class="button">9</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td id ="level10" class="button">10</td>
+          </tr>
+        </table>
+        <div id ="abbruch" class="button">Return</div>
+      </div>
+    </div>
+    <!--Der Win-Screen fuer das erfolgreiche Abschließen eines Levels-->
+    <div id="winScreen">
+      <h1>You Won!</h1>
+        <table id="table">
+          <h2 id = "time"></h2>
+          <h2>Do you want to continue?</h2>
+          <tr>
+            <td id ="continue" class="button">Continue</td>
+          </tr>
+          <tr>
+            <td id ="returnButtonWin" class="button">Back to Menu</td>
+          </tr>
+      </table>  
+    </div>
+    <!--Der Gameover-Screen fuer die Niederlage in einem Level-->
+    <div id="gameoverScreen">
+      <h1>GAME OVER</h1>
+        <table id="table">
+          <h2>Try again?</h2>
+          <tr>
+            <td id ="retryButton" class="button">Yes</td>
+          </tr>
+          <tr>
+            <td id ="returnButtonGameover" class="button">No</td>
+          </tr>
+      </table>  
+    </div>
+    <!--Das Spielfeld mit der dazugehoerigen Statusbar-->
+    <div id="game_container">
+      <div id="status_bar">
+        <div id="hp_container"></div>
+        <div id="timer"></div>
+      </div>  
+      <div id="game_area"></div>
+      <div id="debug_container"> <!--Debugging-->
+        <div id="fps"></div>
+        <div id="onOrientEvent_counter"></div>
+        <div id="onKeyDownEvent_counter"></div>
+        <div id="alpha"></div>
+        <div id="beta"></div>
+        <div id="gamma"></div>
+      </div>
+    </div>
+  </div> 
+</body>
+</html>

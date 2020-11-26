@@ -1,0 +1,354 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+/*Author Dmitrij Bauer und Tim Wegner*/
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: url("assets/background-black.png");
+}
+
+/* Container fuer Statusleiste und Spielfeld */
+#game_container{
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Debugging-Container */
+#debug_container{
+  display: none;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 2.6vh;
+  position: fixed;
+  z-index: 2;
+}
+/*------*/
+
+/* Statusleiste-Container */
+#status_bar{
+  display: flex;
+  width: 100%;
+  height: 10%;
+}
+
+#hp_container{
+  display: inherit;
+  width: 50%;
+  height: 100%;
+}
+
+.hp{
+  width: 9vh;
+  height: 100%;
+  margin:auto;
+}
+
+.hp_full{
+  background: url("assets/like_full.png") no-repeat center;
+  background-size: 100%; 
+}
+
+.hp_empty{
+  background: url("assets/like_empty.png") no-repeat center;
+  background-size: 100%; 
+}
+
+#timer{
+  display: inherit;
+  margin: auto;
+  color: white;
+  font-size: 7vh;
+  font-family: 'Star Jedi', arial;
+}
+/*------*/
+
+/* Spielfeld-Container */
+#game_area{
+  width: 100%;
+  height: 90%; 
+}
+
+#player{
+  background: url("assets/player_ship.png") no-repeat center;
+  background-size: 100%; 
+  position: fixed;
+  z-index: 1;
+}
+
+.invulnerability{
+  animation: blink_animation 1s infinite;
+}
+
+@keyframes blink_animation{
+  from {opacity: .2;}
+  to {opacity: 1;}
+}
+
+.staticObject{
+  background: url("assets/statObj1.png") no-repeat center;
+  background-size: 100%;
+  position: fixed;
+}
+
+.projectile{
+  background: url("assets/missile00.png") no-repeat center;
+  background-size: 100%;
+  position: fixed;
+  z-index: 0;
+}
+
+.enemy-fighter{
+  background: url("assets/fighter.png") no-repeat center;
+  background-size: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.enemy-hunter{
+  background: url("assets/hunter.png") no-repeat center;
+  background-size: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.enemy-destroyer{
+  background: url("assets/destroyer.png") no-repeat center;
+  background-size: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.powerup-life{
+  background: url("assets/like_full.png") no-repeat center;
+  background-size: 100%;
+  position: fixed;
+}
+
+.powerup-shield{
+  background: url("assets/shield.png") no-repeat center;
+  background-size: 100%;
+  position: fixed;
+}
+
+.asteroid{
+  background: url("assets/Asteroid2.png") no-repeat center;
+  background-size: 100%;
+  position: fixed;
+}
+/*------*/
+
+/*CSS-Regeln fuer den Landscape-Modus*/
+#landscape{
+  display: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  color: rgb(247, 59, 59);
+  font-size: 2em;
+}
+
+#landscapeWarning{
+  width: inherit;
+  height: 80%;
+  background: url("assets/no_landscape.svg") center center no-repeat;
+  background-size: contain;
+}
+
+/*CSS-Regeln fuer den Portrait-Modus*/
+#portrait{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/*CSS-Regeln fuer das Startmenu und die dazugehoerigen Elemente*/
+#start_menu{
+  display: none;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: url("assets/background-black.png");
+}
+
+#menu_buttons{
+  display: none;
+  width: 100%;
+  height: 70%; 
+  margin: auto;
+  flex-flow: column;
+  justify-content: center;
+  font-size: 4vh;
+}
+
+#menu_buttons .button{
+  width: 50%;
+  height: 8%;
+}
+/*CSS-Regeln fuer die Ueberschriften H1*/
+h1{
+  margin: 0 auto 1em auto;
+  padding-top: 1em; 
+  color: silver;
+  font-size: 3em;
+  letter-spacing: 5px;
+  text-shadow: 1px 1px 5px rgb(196, 190, 135);
+}
+
+#gameoverScreen h1{
+  padding-bottom: 1em;
+  color: red;
+  text-shadow: 1px 1px 10px firebrick;
+}
+
+#winScreen h1{
+  padding-bottom: 0.5em;
+  color: rgb(5, 202, 5);
+  text-shadow: 1px 1px 10px rgb(29, 119, 6);
+}
+/*CSS-Regeln fuer die Ueberschriften H2*/
+h2{
+  margin: 0 auto 2em auto;
+  color: silver;
+  font-size: 2.5em;
+  letter-spacing: 5px;
+  text-shadow: 1px 1px 5px rgb(196, 190, 135);
+}
+
+#highscoreListContainer h2{
+  margin: 0 auto 0.5em auto;
+  padding-bottom: 0.5em;
+  font-size: 1.5em;
+}
+
+#gameoverScreen h2{
+  padding-bottom: 0.75em;
+  font-size: 1.5em;
+}
+
+#winScreen h2{
+  padding-bottom: 0.75em;
+  font-size: 1.5em;
+}
+/*CSS-Regeln fuer die Highscoreuebersicht und die dazugehoerigen Elemente*/
+#highscoreListContainer{
+  display: none;
+  width: 60%;
+  height: 70%;
+  margin: auto;
+}
+
+#highscoreList{
+  display: table;
+  width: 100%;
+  height: 80%;
+  text-align: center;
+  font-size: 3vh;
+}
+#highscoreList tr{
+  color: silver;
+}
+
+#highscoreList #highscoreLevel{
+  padding-bottom: 1em;
+  text-shadow: 1px 1px 5px rgb(196, 190, 135);
+  text-decoration: underline;
+  font-size: 4vh;
+}
+
+#highscoreList #highscoreScore{
+  padding-bottom: 1em;
+  text-shadow: 1px 1px 5px rgb(196, 190, 135);
+  text-decoration: underline;
+  font-size: 4vh;
+}
+
+#highscoreAbbruch{
+  display: block;
+  width: 35%;
+  height: 7%; 
+  margin: 1.5em auto; 
+  justify-content: center;
+  font-size: 3.5vh;
+}
+/*CSS-Regeln fuer die Levelliste und die dazugehoerigen Elemente*/
+#levellistContainer{
+  display: none;
+  width: 60%;
+  height: 70%;
+  margin: auto;
+}
+
+#levellist{
+  display: table;
+  width: 100%;
+  height: 50%;
+  font-size: 3vh;
+}
+
+#levellist .button{
+  display: table-cell;
+  width: 15%;
+  height: 10%;
+  color: red;
+}
+
+#abbruch{
+  display: block;
+  width: 40%;
+  height: 7%; 
+  justify-content: center;
+  margin: 2em auto; 
+  font-size: 3.5vh;
+}
+
+/*CSS-Regeln fuer den Gameover-Screen und die dazugehoerigen Elemente*/
+#gameoverScreen{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background: black;
+}
+
+#gameoverScreen table{
+  width: 50%;
+  height: 15%;
+  margin: auto;
+  border-spacing: 0em 1em;
+  font-size: 4vh;
+}
+/*CSS-Regeln fuer den Win-Screen und die dazugehoerigen Elemente*/
+#winScreen{
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+#winScreen table{
+  width: 50%;
+  height: 12%;
+  margin: auto;
+  border-spacing: 0em 1em;
+  font-size: 3vh;
+}
+
+/*CSS-Regeln fuer die Button-Klasse*/
+.button{
+  margin: 5px auto;
+  border: 3px solid rgba(192, 192, 192, 0.644);
+  color: rgb(199, 199, 199);
+  background-color: black;
+}
+
+.button:hover{
+  background-color: grey;
+}
+/*CSS_Regeln fuer die Chechbox Debug-Modus*/
+#check{
+  margin: 0 auto 0 auto;
+}

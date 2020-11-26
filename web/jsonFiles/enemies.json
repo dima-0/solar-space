@@ -1,0 +1,33 @@
+{
+    "fighter":
+    {
+      "hp": 2,
+      "scale" : 0.1,
+      "movement_speed": 0.12,
+      "view_radius": 0.2,
+      "projectile_scale" : 0.25,
+      "projectile_speed" : 0.35,
+      "reload_time" : 2000
+    },
+    "hunter":
+    {
+      "hp": 4,
+      "scale" : 0.11,
+      "movement_speed": 0.2,
+      "view_radius": 0.3,
+      "projectile_scale" : 0.25,
+      "projectile_speed" : 0.3,
+      "reload_time" : 700
+    },
+    "destroyer":
+    {
+      "hp": 7,
+      "scale" : 0.14,
+      "movement_speed": 0.14,
+      "view_radius": 0.7,
+      "projectile_scale" : 0.25,
+      "projectile_speed" : 0.15,
+      "reload_time" : 900
+    }
+  
+}

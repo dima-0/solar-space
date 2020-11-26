@@ -1,0 +1,69 @@
+{
+    "player": [
+        {
+        "id": "player",
+        "hp":3,
+        "posx": 0.5,
+        "posy": 0.85,
+        "scale": 0.1,
+        "movement_speed": 0.3,
+		"rotationx" : 0.0,
+        "rotationy" : -1.0,
+        "projectile_scale" : 0.25,
+        "projectile_speed" : 0.5,
+        "reload_time" : 500
+        }
+    ],
+    "enemies": [
+        {
+        "id": "hunter",
+        "posx": 0.5,
+        "posy": 0.2,
+        "rotationx" : 0.0,
+        "rotationy" : 1.0
+        },
+        {
+        "id": "fighter",
+        "posx": 0.5,
+        "posy": 0.2,
+        "rotationx" : 0.0,
+        "rotationy" : 1.0
+        }
+    ],
+    "asteroids": [
+        {
+        "id":"asteroid",
+        "scale":0.057,
+        "movement_speed": 0.06,
+        "max_quantity": 5
+        }
+    ],
+    "static_objects": [
+        {
+        "id":"staticObject",
+        "posx": 0.8,
+        "posy": 0.4,
+        "scale": 0.25
+        },
+        {
+        "id":"staticObject",
+        "posx": 0.3,
+        "posy": 0.5,
+        "scale": 0.1
+        },
+        {
+        "id":"staticObject",
+        "posx": 0.9,
+        "posy": 0.8,
+        "scale": 0.1
+        }
+    ],
+    "powerups" : [
+        {
+        "possible" : ["life","shield"],
+        "max_quantity" : 3,
+        "spawn_interval" : 10
+        }
+    ]
+}
+  
