@@ -18,8 +18,4 @@ Browserspiel als Singlepage Web-Anwendung für mobile Browser (mit Unterstützun
 
 # Screenshots
 
-![](/screenshots/mainscreen.png) 
-
-![](/screenshots/example1.png)
-
-![](/screenshots/example2.png)
+![](/screenshots/mainscreen.png)        ![](/screenshots/example1.png)        ![](/screenshots/example2.png)
